@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Playing w/ jQuery</title>
+		<meta name="author" content="A. Frehner" />
+		<meta name="description" content="Explaining Django, using HTML5" />
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<script src="js/modernizr.js"></script>
+		<script src="js/jquery-2.0.3.min.js"></script>
+	</head>
+	<body>
+		<nav>
+			<h1>Navigation</h1>
+			<ul>
+				<li>
+					<a href="index.html">Django</a>
+				</li>
+				<li>
+					<a href="jqueryPlaying.html">Playing w/ jQuery</a> 
+				</li>
+			</ul>
+		</nav>
+		<header>
+			<hgroup>
+				<h1>Doing silly things with jQuery</h1>
+				<h2>A. Frehner</h2>
+			</hgroup>
+		</header>
+		<section class="toggleIt">
+			<header>
+				<h1>Toggle1 (click me)</h1>
+			</header>
+			<section>
+				I'm not quite sure what I want to do this this area.  Maybe I'll try to do some fancy jQuery stuff here just for fun.
+			</section>
+		</section>
+		<section class="toggleIt">
+			<header>
+				<h1>Toggle2 (click me)</h1>
+			</header>
+			<section>
+				Look, another random portion of text.  Enjoy!	
+			</section>
+		</section>
+		<section class="toggleIt">
+			<header>
+				<h1>Toggle3 (don't click the others; click ME!)</h1>
+			</header>
+			<section>
+				It's going up and down and up and down.
+			</section>
+		</section>
+		<hr>
+		<section>
+			<header>
+				<h1>Now for a little game</h1>
+			</header>
+			<section>
+				Please try to select the third radio button.<br>
+				<input type="radio" name="radioPlay" class="radioPlay" value="1" id="r1"><label for="r1">Number 1</label></input><br>
+				<input type="radio" name="radioPlay" class="radioPlay" value="2" id="r2"><label for="r2">Number 2</label></input><br>
+				<input type="radio" name="radioPlay" class="radioPlay" value="3" id="r3"><label for="r3">Number 3</label></input><br>
+				<input type="radio" name="radioPlay" class="radioPlay" value="4" id="r4"><label for="r4">Number 4</label></input><br>
+				<input type="radio" name="radioPlay" class="radioPlay" value="5" id="r5"><label for="r5">Number 5</label></input>
+			</section>
+		</section>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				//find all items of class toggleIt, then headers in those sections, and apply this code when they are clicked
+				$(".toggleIt header").click(function(){
+					//get the parent, then the child called section, and toggle it
+					$(this).parent().children("section").toggle();
+				});
+
+				//whenever the class radioPlay is clicked, do this.
+				$(".radioPlay").change(function(){
+					if( $(".radioPlay:checked").val() == 3){
+						//if the third radio button is selected, then check a different radio button.
+						$("#r"+getRand()).prop("checked", true);
+					}
+				});
+
+				//returns a random number between 1-5, but NOT 3.
+				function getRand(){
+					//get a random number between 1-5
+					var newNum = Math.floor((Math.random()*5)+1);
+					if (newNum == 3){
+						//if that number is 3, use recursion to get a new number between 1-5
+						newNum = getRand();
+					}
+					return newNum;
+				}
+
+			});
+		</script>
+	</body>
+</html>
