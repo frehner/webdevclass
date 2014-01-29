@@ -5,15 +5,31 @@
 		<meta name="author" content="A. Frehner" />
 		<meta name="description" content="Explaining Django, using HTML5" />
 		<meta charset="utf-8">
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+		<!-- silly favicon -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" >
+		
+		<!-- for modernizr -->
 		<script src="js/modernizr.js"></script>
+		
+		<!-- for jquery -->
 		<script src="js/jquery-2.0.3.min.js"></script>
+
+		<!-- <link href="css/index.css" rel="stylesheet" type="text/css"> -->
+
+		<!-- for the font -->
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+		<!-- for less css -->
+		<link rel="stylesheet/less" type="text/css" href="css/index.less" />
+		<script src="js/less-1.6.1.min.js" type="text/javascript"></script>
+
 	</head>
 	<body>
 		<nav>
 			<h1>Navigation</h1>
 			<ul>
-				<li>
+				<li class="currentPage">
 					<a href="index.html">Django</a>
 				</li>
 				<li>
@@ -21,16 +37,17 @@
 				</li>
 			</ul>
 		</nav>
-		<header>
-			<hgroup>
-				<h1>Django: A Python MTV Framework</h1>
-				<h2>A. Frehner</h2>
-			</hgroup>
+		<header class="pageHeader">
+			<h1>Django: A Python MTV Framework</h1>
+			<h2>A. Frehner</h2>
 		</header>
 		<section>
 			<header>
 				<h1>Where did Django come from?</h1>
 			</header>
+			<p>
+				I tried to write something, but decided that Wikipedia had stated it more clearly and concisely than I could.  Here's what Wikipedia says:
+			</p>
 			<blockquote>
 				<p>
 					Django was born in the fall of 2003, when the web programmers at the Lawrence Journal-World newspaper, Adrian Holovaty and Simon Willison, began using Python to build applications. It was released publicly under a BSD license in July 2005. The framework was named after guitarist Django Reinhardt.
@@ -38,14 +55,14 @@
 				<p>
 					In June 2008, it was announced that a newly formed Django Software Foundation (DSF) would maintain Django in the future.
 				</p>
-				<footer>
+				<!-- <footer> -->
 					<cite>
 						<a href="http://en.wikipedia.org/wiki/Django_(web_framework)#History">Wikipedia Article on Django</a>
 					</cite>
-				</footer>				
+				<!-- </footer>				 -->
 			</blockquote>
 			<p>
-				Also, MTV stands for "model, template, view", which is the Django interpretaion of MVC (model, view, controller).  In Djanog, the model is used for database interactions, the view is used for business logic, and the template is a dynamic html document intermixed with the template language. 
+				Also, MTV stands for "model, template, view", which is the Django interpretaion of MVC (model, view, controller).  In Django, the model is used for database interactions, the view is used for business logic, and the template is a dynamic html document intermixed with the template language. 
 			</p>
 		</section>
 		<section>
@@ -64,7 +81,10 @@
 								John.save()
 							</code>
 						</p>
-						and that object is now saved in the database.  Now, let's say we need to change John's address (he moved).  Easy enough:
+						<p>
+							and that object is now saved in the database.  Now, let's say we need to change John's address (he moved).  Easy enough:
+						</p>
+						
 						<p>
 							<code>
 								John.address = "111 W"
@@ -72,7 +92,10 @@
 								John.save()
 							</code>
 						</p>
-						Look at that.  You don't have to worry about UPDATE or INSERT or anything; you just "save" the object and Django handles that for you.  But don't worry; if you need to write pure SQL, you still can, too.
+						<p>
+							Look at that.  You don't have to worry about UPDATE or INSERT or anything; you just "save" the object and Django handles that for you.  But don't worry; if you need to write pure SQL, you still can, too.
+						</p>
+						
 					</p>
 				</details>
 				<details>

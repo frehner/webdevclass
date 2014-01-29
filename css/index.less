@@ -1,0 +1,117 @@
+@reddish: #F14B6A;
+@blackish: #3D3C3E;
+@blueish: #22BDAF;
+@lightbluish: #BAD7D4;
+@whiteish: #F4F4F4;
+
+@lrMargins: 20px;
+
+body{
+	margin:0;
+	font-family: 'Ubuntu', sans-serif;
+	background-color:@whiteish;
+	color:@blackish;
+}
+
+nav {
+	display: block;
+	clear:both;
+	background-color:@blackish;
+	color:@lightbluish;
+
+	li {
+		list-style-type: none;
+		padding:15px;
+		display: inline-block;
+	}
+
+	ul {
+		margin:0px;
+		display: inline-block;
+		font-size:1.5em;
+	}
+
+	h1 {
+		display:inline-block;
+		margin:0px;
+		padding-left:15px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a:link{
+		color:@lightbluish;
+	}
+
+	a:visited{
+		color:@lightbluish;
+	}
+}
+
+header:not(.pageHeader){
+	color:@blueish;
+	margin:5px @lrMargins;
+
+	h1{
+		margin:0px 0px;
+	}
+}
+
+section {
+	margin:5px @lrMargins;
+
+	p {
+		margin:0px @lrMargins*2;
+	}
+
+}
+
+details {
+
+	summary {
+		color:@reddish;
+		margin:0px @lrMargins*1.5;
+	}
+
+}
+
+blockquote {
+	p {
+		margin:10px @lrMargins*2;
+	}
+}
+
+.currentPage {
+	background-color: @whiteish;
+
+	a:link{
+		color:@blackish;
+	}
+	a:visited{
+		color:@blackish;
+	}
+}
+
+code {
+	margin:0px @lrMargins;
+}
+
+cite {
+	margin:0px @lrMargins*2;
+}
+
+.pageHeader {
+	color:@reddish;
+	text-align: center;
+}
+
+footer {
+	background-color: @blackish;
+	text-align: center;
+	color:@lightbluish;
+	margin-top: @lrMargins;
+	padding:@lrMargins;
+
+}
