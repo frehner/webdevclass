@@ -52,36 +52,55 @@ nav {
 
 header:not(.pageHeader){
 	color:@blueish;
-	margin:5px @lrMargins;
+	padding:5px @lrMargins;
+	margin:0px;
 
 	h1{
-		margin:0px 0px;
+		padding:0px 0px;
+		margin:5px;
 	}
 }
 
 section {
-	margin:5px @lrMargins;
+	padding:5px @lrMargins;
+	margin:0px;
 
 	p {
-		margin:0px @lrMargins*2;
+		/*padding:0px @lrMargins*2;*/
+		margin:5px @lrMargins*2;
+	}
+
+	ul {
+		margin:0px @lrMargins;
 	}
 
 }
 
-details {
+/*details tag no longer in website due to incompatibility*/
+/*details {
 
 	summary {
 		color:@reddish;
-		margin:0px @lrMargins*1.5;
+		padding:0px @lrMargins*1.5;
+		margin: 35px;
 	}
 
+}*/
+
+.details {
+	margin:5px @lrMargins;
+
+	h3 {
+		margin: 10px @lrMargins*1.5;
+		color:@reddish;
+	}
 }
 
-blockquote {
+/*blockquote {
 	p {
-		margin:10px @lrMargins*2;
+		padding:10px @lrMargins*2;
 	}
-}
+}*/
 
 .currentPage {
 	background-color: @whiteish;
@@ -95,11 +114,12 @@ blockquote {
 }
 
 code {
-	margin:0px @lrMargins;
+	padding:0px @lrMargins;
 }
 
 cite {
-	margin:0px @lrMargins*2;
+	padding:0px @lrMargins*2;
+
 }
 
 .pageHeader {
@@ -114,4 +134,20 @@ footer {
 	margin-top: @lrMargins;
 	padding:@lrMargins;
 
+}
+
+input[type=radio] {
+	display:none;
+}
+
+label {
+    display:inline-block;
+    margin:2px -2px;
+    padding: 4px 12px;
+    background-color: @blackish;
+    color:@lightbluish;
+}
+
+input[type=radio]:checked + label {
+	background-color:@reddish;
 }

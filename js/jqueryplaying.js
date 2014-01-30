@@ -3,7 +3,7 @@ $(document).ready(function(){
 	//find all items of class toggleIt, then headers in those sections, and apply this code when they are clicked
 	$(".toggleIt header").click(function(){
 		//get the parent, then the child called section, and toggle it
-		$(this).parent().children("section").toggle();
+		$(this).parent().children("section").slideToggle();
 	});
 
 	//whenever the class radioPlay is clicked, do this.

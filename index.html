@@ -69,60 +69,60 @@
 			<header>
 				<h1>What are some good things about Django?</h1>
 			</header>
-			<p>
-				<details open>
-					<summary>
+				<div class="details">
+					<h3>
 						Database interactions in Python
-					</summary>
+					</h3>
 					<p>
 						Once you lay out your database in Django, it allows you to do CRUD functions without switching languages.  For example, if you have a person object named John, you can simply write:
-						<p>
-							<code>
-								John.save()
-							</code>
-						</p>
-						<p>
-							and that object is now saved in the database.  Now, let's say we need to change John's address (he moved).  Easy enough:
-						</p>
-						
-						<p>
-							<code>
-								John.address = "111 W"
-								<br>
-								John.save()
-							</code>
-						</p>
-						<p>
-							Look at that.  You don't have to worry about UPDATE or INSERT or anything; you just "save" the object and Django handles that for you.  But don't worry; if you need to write pure SQL, you still can, too.
-						</p>
-						
-					</p>
-				</details>
-				<details>
-					<summary>
-						Automatic, production-ready admin interface
-					</summary>
 					<p>
-						The admin interface is generally just as large and time consuming to build as the public-facing side of your webpage.  Well, fret no more: Django <em> automatically </em> builds your admin site, so you don't need to worry about that.
+						<code>
+							John.save()
+						</code>
 					</p>
-				</details>
-				<details>
-					<summary>
-						Clean URLs
-					</summary>
 					<p>
-						Ever visit a website that has URLs with random characters, numbers, and symbols in it?  Django makes it so those days are over: your pages will have easy-to-read URLs without any trailing markers like <code>.php</code> or <code>.asp</code>.
+						and that object is now saved in the database.  Now, let's say we need to change John's address (he moved).  Easy enough:
 					</p>
-				</details>
-				<details>
-					<summary>
-						Using templates: a great DRY principle
-					</summary>
+					
 					<p>
-						DRY stands for <em>Don't Repeat Yourself</em>.  Almost nothing is worse than doing the same thing over and over again.  Django's templates allow you to build a base look and layout for your webpage, and then dynamically fill it with content on a per-page basis.  This way, you don't have to re-do the html over and over again for each page that you build.  A fair warning, however; the language used for the template system is <em>not</em> Python, though it is very simple to learn.
+					<code>
+						John.address = "111 W"
+					</code>
+					<br>
+					<code>
+						John.save()
+					</code>						
 					</p>
-				</details>
-			</p>
+					<p>
+						Look at that.  You don't have to worry about UPDATE or INSERT or anything; you just "save" the object and Django handles that for you.  But don't worry; if you need to write pure SQL, you still can, too.
+					</p>
+					
+				</p>
+			</div>
+			<div class="details">
+				<h3>
+					Automatic, production-ready admin interface
+				</h3>
+				<p>
+					The admin interface is generally just as large and time consuming to build as the public-facing side of your webpage.  Well, fret no more: Django <em> automatically </em> builds your admin site, so you don't need to worry about that.
+				</p>
+			</div>
+			<div class="details">
+				<h3>
+					Clean URLs
+				</h3>
+				<p>
+					Ever visit a website that has URLs with random characters, numbers, and symbols in it?  Django makes it so those days are over: your pages will have easy-to-read URLs without any trailing markers like .php or .asp .
+				</p>
+			</div>
+			<div class="details">
+				<h3>
+					Using templates: a great DRY principle
+				</h3>
+				<p>
+					DRY stands for <em>Don't Repeat Yourself</em>.  Almost nothing is worse than doing the same thing over and over again.  Django's templates allow you to build a base look and layout for your webpage, and then dynamically fill it with content on a per-page basis.  This way, you don't have to re-do the html over and over again for each page that you build.  A fair warning, however; the language used for the template system is <em>not</em> Python, though it is very simple to learn.
+				</p>
+			</div>
 		</section>
 		<section>
 			<header>
@@ -138,6 +138,11 @@
 			</ul>
 		</section>
 		<section>
+			<header>
+				<h1>
+					This program brought to you by the letter Dj, and by:
+				</h1>
+			</header>
 			<p>
 				The majority of this information was summarized from <a href="https://www.djangoproject.com">djangoproject.com</a>, which is one of the best framework webpages I've seen.
 			</p>
