@@ -15,10 +15,14 @@ var li1 = document.createElement('li')
 var li2 = document.createElement('li')
 
 //look at what the current page is, and add the class that makes it look nice in CSS
-if(last == 'index.html')
+if(last == 'index.html'){
 	li1.className='currentPage'
-else
+	window.document.title = 'Django, an HTML5 example'
+}
+else{
 	li2.className='currentPage'
+	window.document.title = 'Playing w/ JQuery'
+}
 
 //set the innerHTML for each li item
 li1.innerHTML = '<a href="index.html">Django</a>'
