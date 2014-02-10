@@ -14,14 +14,18 @@ var last = splits.pop()
 var li1 = document.createElement('li')
 var li2 = document.createElement('li')
 
+console.log(last)
+
 //look at what the current page is, and add the class that makes it look nice in CSS
-if(last == 'index.html'){
+if(last == 'index.html' || last == ''){
 	li1.className='currentPage'
 	window.document.title = 'Django, an HTML5 example'
+	var pageTitle = 'Django: A Python MVT Framework'
 }
 else{
 	li2.className='currentPage'
 	window.document.title = 'Playing w/ JQuery'
+	var pageTitle = 'Doing silly things with JQuery'
 }
 
 //set the innerHTML for each li item
@@ -34,7 +38,7 @@ header.innerHTML = '<h1>Navigation</h1>	<ul>'+li1.outerHTML+li2.outerHTML+'</ul>
 //create the second part of the header
 var header2 = document.createElement('header')
 header2.className = 'pageHeader'
-header2.innerHTML = '<h1>Doing silly things with jQuery</h1><h2>A. Frehner</h2>'
+header2.innerHTML = '<h1>'+pageTitle+'</h1><h2>A. Frehner</h2>'
 
 //insert them as the first parts of the body. 
 document.body.insertBefore(header2, document.body.firstChild)
