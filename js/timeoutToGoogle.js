@@ -8,6 +8,7 @@ startTimeout()
 var buttonLeave = document.getElementById('buttonLeave')
 var buttonStay = document.getElementById('buttonStay')
 var modalWindowDiv = document.getElementById('modalWindowDiv')
+var buttonQuitNotifications = document.getElementById('buttonQuitNotifications')
 
 //starts the timeout countdown, calls displayModal when up.
 function startTimeout(){
@@ -32,3 +33,6 @@ buttonStay.addEventListener('click', function(){
 	startTimeout()
 })
 
+buttonQuitNotifications.addEventListener('click', function(){
+	modalWindowDiv.className = 'modalWin modalHidden'
+})

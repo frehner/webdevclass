@@ -14,7 +14,7 @@ var last = splits.pop()
 var li1 = document.createElement('li')
 var li2 = document.createElement('li')
 
-console.log(last)
+// console.log(last)
 
 //look at what the current page is, and add the class that makes it look nice in CSS
 if(last == 'index.html' || last == ''){
