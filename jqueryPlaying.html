@@ -89,7 +89,7 @@
 		<hr>
 		<section>
 			<header>
-				<h1>Now for a little game</h1>
+				<h1>Radio button game</h1>
 			</header>
 			<section>
 				<p>
@@ -107,11 +107,35 @@
 				</p>
 			</section>
 		</section>
+		<hr>
+		<section>
+			<header>
+				<h1>
+					Word game
+				</h1>
+			</header>
+			<p>
+				How about a game of creating sentences with random words?  Sure, why not.  <strong>Note!</strong> Because I am pulling these words from a third-party website (thanks <a href="http://www.setgetgo.com">setgetgo.com</a>!), I cannot guarantee what the words will be.
+			</p>
+			<p>
+				How many words would you like?  I set an arbitrary limit of 10 to make sure we don't kill setgetgo's servers.
+				<br>
+				<input id="numOfWords" type="number" min=0 max=10 step=1>
+				<button id="getNewWords">Get new words</button> 
+				<img src="images/ajax-loader.gif" height="20px" width="20px" id="ajax-gif" style="display:none;">
+			</p>
+			<p id="numberMessage" display=none>
+
+			</p>
+			<ul id="wordList">
+				
+			</ul>
+		</section>
 		<!-- <footer>
 			This page was built to showcase some new HTML5 tags, which means that some browsers may not display this page correctly. 
 		</footer> -->
 		<script src="js/headerFooter.js"></script>
 		<script src="js/jqueryplaying.js"></script>
-		<script src="js/timeoutToGoogle.js"></script>
+		<!-- // <script src="js/timeoutToGoogle.js"></script> -->
 	</body>
 </html>

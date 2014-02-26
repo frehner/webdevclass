@@ -45,4 +45,4 @@ document.body.insertBefore(header2, document.body.firstChild)
 document.body.insertBefore(header, document.body.firstChild)
 
 //add the footer
-document.body.innerHTML = document.body.innerHTML + '<footer>This page was built to showcase some new HTML5 tags, which means that some browsers may not display this page correctly.</footer>'
+document.body.innerHTML = document.body.innerHTML + '<footer><p>This page was built for a class project.</p><p>Source code can be found at <a href="https://github.com/frehner/webdevclass">github</a></p></footer>'
