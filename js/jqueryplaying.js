@@ -37,15 +37,15 @@ $(document).ready(function(){
 			var ajaxUrl = "http://randomword.setgetgo.com/get.php"
 			try{
 				for (var i = 0; i < numWords; i++) {
-					// $.ajax({
-					// 	type: "GET",
-					// 	url: ajaxUrl,
-					// 	dataType: "jsonp",
-					// 	jsonpCallback: 'fillWordList'
-					// })
-					$.get(ajaxUrl, function(data){
-						alert(data.Word)
+					$.ajax({
+						type: "GET",
+						url: ajaxUrl,
+						dataType: "jsonp",
+						jsonpCallback: 'fillWordList'
 					})
+					// $.get(ajaxUrl, function(data){
+					// 	alert(data.Word)
+					// })
 				}
 			} catch (e) {
 				numMessage.html("Sorry, something failed")
@@ -55,9 +55,9 @@ $(document).ready(function(){
 			
 			ajaxGif.hide()
 
-			// function fillWordList(data) {
-			// 	alert(data.Word)
-			// }
+			function fillWordList(data) {
+				alert(data.Word)
+			}
 		}
 	})
 
