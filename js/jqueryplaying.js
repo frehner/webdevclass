@@ -29,7 +29,7 @@ $(document).ready(function(){
 		var numMessage = $('#numberMessage')
 		if(numWords > 6 || numWords < 1 || numWords != parseInt(numWords)){
 			//can't work with this type of number
-			numMessage.html("Sorry, that number doesn't work. Only integers between 1-10 allowed")
+			numMessage.html("Sorry, that number doesn't work. Only integers between 1-6 allowed")
 			numMessage.show()
 		} else {
 			numMessage.hide()
@@ -72,6 +72,12 @@ $(document).ready(function(){
 		connectToSortable: '#wordList',
 		helper:'clone',
 		revertDuration: 0,
+	})
+
+	$('#removeWords').droppable({
+		drop: function(event, ui){
+			$(ui.draggable).remove()
+		}
 	})
 
 });
