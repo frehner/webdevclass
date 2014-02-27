@@ -27,40 +27,51 @@ $(document).ready(function(){
 	$("#getNewWords").click(function(){
 		var numWords = $('#numOfWords').val()
 		var numMessage = $('#numberMessage')
-		if(numWords > 10 || numWords < 1 || numWords != parseInt(numWords)){
+		if(numWords > 6 || numWords < 1 || numWords != parseInt(numWords)){
 			//can't work with this type of number
 			numMessage.html("Sorry, that number doesn't work. Only integers between 1-10 allowed")
 			numMessage.show()
 		} else {
+			numMessage.hide()
 			var ajaxGif = $("#ajax-gif")
 			ajaxGif.show()
 			var ajaxUrl = "http://randomword.setgetgo.com/get.php"
-			try{
-				for (var i = 0; i < numWords; i++) {
-					$.ajax({
-						type: "GET",
-						url: ajaxUrl,
-						dataType: "jsonp",
-						jsonpCallback: 'fillWordList'
-					})
-					// $.get(ajaxUrl, function(data){
-					// 	alert(data.Word)
-					// })
-				}
-			} catch (e) {
-				numMessage.html("Sorry, something failed")
-				numMessage.show()
-				console.log(e.message)
-			}
-			
-			ajaxGif.hide()
-
-			function fillWordList(data) {
-				alert(data.Word)
+			var listItems = []
+			for (var i = 0; i < numWords; i++) {
+				$.ajax({
+					type: "GET",
+					url: ajaxUrl,
+					dataType: "jsonp",
+				}).done(function(data){
+					var listString = "<li class='listItems'>"+data.Word+"</li>"
+					listItems.push(listString)
+					if(listItems.length == numWords ){
+						addItemsToList(listItems)
+						$('#wordList').sortable()
+						ajaxGif.hide()
+					}
+				}).fail(function(){
+					numMessage.html("Sorry, something failed")
+					numMessage.show()
+					ajaxGif.hide()
+				})
 			}
 		}
 	})
 
-	
+	function addItemsToList(listArr){
+		$("#wordList").append( listArr.join(''))
+	}
+
+	$('#clearWords').click(function(){
+		var wordList = $('#wordList')
+		wordList.html('')
+	})
+
+	$('#sentenceHelpers li').draggable({
+		connectToSortable: '#wordList',
+		helper:'clone',
+		revertDuration: 0,
+	})
 
 });
