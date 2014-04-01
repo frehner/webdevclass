@@ -21,7 +21,7 @@ My goal is to conform to web standards and implement many best practices as defi
                 Does the website display properly in Chrome, Firefox, and IE9”
 
 
-View this project in action at this link: http://frehner.github.io/webdevclass/index.html
+View this project in action at this link: http://frehner.github.io/webdevclass/index.html Be sure to play the word game on the JQuery page :)
 
 In addition, there are instructions given in class.  This is not meant to be a complex website this is by assignment classification, a review.
 
